@@ -1,0 +1,30 @@
+.homeDescription {
+  text-align: center;
+  background-color: hsl(280, 5%, 13%);
+  background-color: #171e24;
+  background-color: #2a3238;
+  padding: 2rem 0;
+}
+
+.homeDescription h1 {
+  font-size: 5rem;
+  margin: 1rem 0;
+  color: whitesmoke;
+}
+
+.homeDescription p {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: whitesmoke;
+  width: 70%;
+  margin: 5rem auto;
+  text-align: left;
+}
+.homeDescription ul li {
+  font-size: 1.7rem;
+  color: whitesmoke;
+  width: 50%;
+  margin: auto;
+  line-height: 1.5;
+  text-align: left;
+}

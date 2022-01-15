@@ -1,0 +1,9 @@
+.appBar {
+  font-size: 10rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  background-color: rgb(0, 0, 0);
+}
+.navButton {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}

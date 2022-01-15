@@ -1,0 +1,13 @@
+body {
+  background-color: #39434b;
+  background-color: #171e24;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  padding: 0 auto;
+  margin: 0;
+  box-sizing: border-box;
+}

@@ -1,0 +1,20 @@
+.reservationContainer {
+  display: flex;
+  background-color: #39434b;
+  background-color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  margin: 15rem 20rem;
+  border-radius: 50px;
+  min-width: 1rem;
+}
+.searchIcon {
+  font-size: 8rem;
+  cursor: pointer;
+}
+.verticalDivider {
+  border-left: 2px solid gray;
+  height: 5rem;
+}
