@@ -36,15 +36,25 @@ const theme = createTheme({
 });
 
 export default function Reservation() {
-  const [from, setFrom] = React.useState("");
-  const [to, setTo] = React.useState("");
-  const cities = ["Izmir", "Istanbul", "New York", "Amsterdam", "Berlin"];
+  const [from, setFrom] = React.useState(0);
+  const [to, setTo] = React.useState(0);
+  const cities = [
+    "All",
+    "Izmir",
+    "Istanbul",
+    "New York",
+    "Amsterdam",
+    "Berlin",
+  ];
   const router = useRouter();
   const [value, setValue] = React.useState(new Date());
 
   const navigate = () => {
     const formattedDate = convert(value);
-    router.push(`/flight/${formattedDate}`);
+    router.push({
+      pathname: `/flight/${formattedDate}`,
+      query: { from: cities[from], to: cities[to] },
+    });
   };
   const navigateCreateFlight = () => {
     router.push(`/flight/create`);
@@ -79,7 +89,7 @@ export default function Reservation() {
               style={{ fontSize: "2rem" }}
             >
               {cities.map((city, index) => (
-                <MenuItem key={city} value={index}>
+                <MenuItem key={city} value={index} sx={{ fontSize: "2rem" }}>
                   {city}
                 </MenuItem>
               ))}
@@ -103,7 +113,7 @@ export default function Reservation() {
               onChange={(e) => setTo(e.target.value)}
             >
               {cities.map((city, index) => (
-                <MenuItem key={city} value={index}>
+                <MenuItem key={city} value={index} sx={{ fontSize: "2rem" }}>
                   {city}
                 </MenuItem>
               ))}
@@ -118,6 +128,9 @@ export default function Reservation() {
               minDate={new Date("2022-01-01")}
               maxDate={new Date("2023-01-01")}
               value={value}
+              openTo="year"
+              sx={{ minWidth: "20rem" }}
+              inputFormat="dd-MM-yyyy"
               onChange={(newValue) => {
                 setValue(newValue);
               }}
@@ -130,6 +143,7 @@ export default function Reservation() {
         {/*  <Link href={`/flight/${convert(value)}`}> */}
         <SearchIcon
           className={styles.searchIcon}
+          sx={{ fontSize: "8rem" }}
           color="error"
           onClick={navigate}
         />

@@ -12,7 +12,6 @@ const CheckReservation = () => {
   const checkTransaction = async (hash) => {
     const result = await web3.eth.getTransaction(hash);
     if (result.blockHash !== null) {
-      console.log(result);
       setIsTxFinished(true);
       setTxBlockHash(result.blockHash);
       setTxHash(result.transactionHash);
@@ -27,10 +26,6 @@ const CheckReservation = () => {
       const flightInfo = await flight(flightAddress)
         .methods.getFlightInfo()
         .call();
-      console.log(passengers);
-      console.log(passengers[0][0]);
-      console.log(passengers[0][4]);
-      console.log(flightInfo);
       const ticketInfo = {};
       passengers.forEach((passenger) => {
         if (passenger[0] === walletAddress) {

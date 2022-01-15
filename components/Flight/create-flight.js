@@ -120,7 +120,6 @@ const CreateFlight = () => {
 
     const formattedFlightTime = `${constraints.flightTime}T${constraints.flightHours}:${constraints.flightMinutes}:00`;
     const formattedArrivalTime = `${constraints.arrivalTime}T${constraints.arrivalHours}:${constraints.arrivalMinutes}:00`;
-    console.log(formattedFlightTime);
     try {
       if (window.ethereum) {
         await ethereum.enable();
@@ -146,7 +145,6 @@ const CreateFlight = () => {
 
       checkTransaction(result.transactionHash);
     } catch (error) {
-      console.log(error);
       setOpenTransactionModal(false);
       setIsTxFinished(true);
       if (error.code === undefined) {
@@ -160,7 +158,6 @@ const CreateFlight = () => {
   const checkTransaction = async (hash) => {
     const result = await web3.eth.getTransaction(hash);
     if (result.blockHash !== null) {
-      console.log(result);
       setIsTxFinished(true);
       setTxBlockHash(result.blockHash);
       setTxHash(result.hash);

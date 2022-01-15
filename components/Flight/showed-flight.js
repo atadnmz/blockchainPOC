@@ -16,7 +16,6 @@ const ShowedFlights = (props) => {
     businessPrice,
     economyPrice,
   } = props.flight;
-
   const [showCheckout, setShowCheckout] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
